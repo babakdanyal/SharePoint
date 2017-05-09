@@ -1,0 +1,14 @@
+<p>
+Keeping short naming convention saves you a lot of trouble. Please have a look at the few important points below
+
+	It is a good idea to keep the names for sites, subsites, libraries, lists, folders and files short.
+	Do not use spaces as one space is equal to 3 characters i.e. %20 in URL. Alternatives includes using Camel Case or underscore _.
+	Keep a standard for naming sites, subsites, libraries, lists, folders and files for consistency and make sure everyone in the organization follows it makes it easier to remember especially when URL becomes too long.
+	SharePoint URL has a character limit of 255 characters, using short names can save you a lot of future trouble for example links to your folder and files may not work if the 
+URL exceeds the limit or while migration you may not be able to copy paste files by copying the parent folder you have to go deep and manually copy the sub folders first then parent folders.
+	When naming documents, special characters (such as plus signs, braces, brackets, parentheses, etc.) can prevent SharePoint from indexing a file correctly. Or, it may fail to be indexed at all. In some cases, special characters in filenames can cause an HTTP 404 File Not Found or HTTP 400 Bad Request error.
+	It's always a good idea to use simple, short, alpha-numeric list, library, file, and folder names and avoid special characters, such as ` ~! @ # $ % ^ & * ( ) = + { } [ ] | \ : ; " ' < , > . ? /), when saving files to a web-based environment.  It is safe to use both dashes (-) and underscores (_) in filenames in SharePoint. 
+	When you create List or Libraries or its View, names using Camel Case and then after the site is created, go back in to the settings and re-name the Title (or view name) to include spaces in the names. This will eliminate %20 in the URL and still support a friendly end user experience.
+
+
+<p>
