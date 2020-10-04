@@ -5,7 +5,7 @@
 #end region
 $SiteURL = "<site url goes here>"
 $ListName= "Site Pages"
-$Created = "2019-12-20"
+$Date = "2019-12-20"
 $NewsID = 10
 Connect-PnPOnline -Url $SiteURL -UseWebLogin
 
@@ -14,6 +14,6 @@ if (-not (Get-PnPContext)) {
     return
 }
 else{
-    Set-PnPListItem -List $ListName -Identity $NewsID -Values @{"FirstPublishedDate"=$Created;"Created"=$Created;"Modified"=$Created;} -SystemUpdate:$true
+    Set-PnPListItem -List $ListName -Identity $NewsID -Values @{"FirstPublishedDate"=$Date;} -SystemUpdate:$true
 }
     
