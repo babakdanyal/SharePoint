@@ -1,6 +1,6 @@
 #start region
 #
-#Use this script to update the original published date of news articles in the SharePoint site.
+# Editable Published Date OR First Published Date - Use this script to update the original published date of news articles in the SharePoint site.
 #
 #end region
 $SiteURL = "<site url goes here>"
