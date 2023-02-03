@@ -36,4 +36,4 @@ Version|Date|Comments
   - `gulp bundle --ship`
   - `gulp build --ship`
   - `gulp package-solution --ship`
-  - Deploy the app package (`sharepoint/solution/<package name>.spkg`) to your tenant AppCatalog.
+  - Deploy the app package (`sharepoint/solution/<package name>.spkg`) to your tenant AppCatalog
