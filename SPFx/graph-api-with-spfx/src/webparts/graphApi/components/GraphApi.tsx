@@ -1,25 +1,25 @@
 import * as React from 'react';
 import styles from './GraphApi.module.scss';
-import { IGraphApiProps } from './IGraphApiProps';
 import { escape } from '@microsoft/sp-lodash-subset';
+import { IGraphApiUserProps } from './IGraphApiUserProps';
 
-export default class GraphApi extends React.Component<IGraphApiProps, {}> {
-  public render(): React.ReactElement<IGraphApiProps> {
+export default class GraphApi extends React.Component<IGraphApiUserProps, {}> {
+  public render(): React.ReactElement<IGraphApiUserProps> {
     const {
-      description,
+      displayName,
+      email,
       isDarkTheme,
       environmentMessage,
-      hasTeamsContext,
-      userDisplayName
+      hasTeamsContext
     } = this.props;
 
     return (
       <section className={`${styles.graphApi} ${hasTeamsContext ? styles.teams : ''}`}>
         <div className={styles.welcome}>
           <img alt="" src={isDarkTheme ? require('../assets/welcome-dark.png') : require('../assets/welcome-light.png')} className={styles.welcomeImage} />
-          <h2>Well done, {escape(userDisplayName)}!</h2>
+          <h2>Well done, {escape(displayName)}!</h2>
           <div>{environmentMessage}</div>
-          <div>Web part property value: <strong>{escape(description)}</strong></div>
+          <div>User Email is: <strong>{escape(email)}</strong></div>
         </div>
         <div>
           <h3>Welcome to SharePoint Framework!</h3>
