@@ -10,11 +10,7 @@ import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
 import * as strings from 'GraphApiWebPartStrings';
 import GraphApi from './components/GraphApi';
-import { IGraphApiProps } from './components/IGraphApiProps';
-
-//import { MSGraphClient } from "@microsoft/sp-http";
-//import { graph } from "@pnp/graph";
-//import { sp } from "@pnp/sp";
+import { IGraphApiUserProps } from './components/IGraphApiUserProps';
 
 export interface IGraphApiWebPartProps {
   description: string;
@@ -25,38 +21,47 @@ export default class GraphApiWebPart extends BaseClientSideWebPart<IGraphApiWebP
   private _isDarkTheme: boolean = false;
   private _environmentMessage: string = '';
 
-  private _getData = async () => {
-    const graphClient = await this.context.msGraphClientFactory.getClient("3");
-    const data = await graphClient
-      .api("/me")
-      .get();
-    console.log(data);
-    };
-    
+  private async getMsGraphClient() {
+    return await this.context.msGraphClientFactory.getClient("3");
+  }
+
+  private async getUser() {
+    const msGraphClient = await this.getMsGraphClient();
+    const apiResponse = await msGraphClient.api('/me').get();
+    return await apiResponse;
+  }
+
+  private logInfo(message: any): void {
+    console.info(message);
+  }
   public render(): void {
 
-    void this._getData();
-    const element: React.ReactElement<IGraphApiProps> = React.createElement(
-      GraphApi,
-      {
-        description: this.properties.description,
-        isDarkTheme: this._isDarkTheme,
-        environmentMessage: this._environmentMessage,
-        hasTeamsContext: !!this.context.sdks.microsoftTeams,
-        userDisplayName: this.context.pageContext.user.displayName
-      }
-    );
+    this.getUser().then(async (result: any) => {
+      this.logInfo(result);
+      const element: React.ReactElement<IGraphApiUserProps> = React.createElement(
+        GraphApi,
+        {
+          displayName: result.displayName,
+          email: result.mail,
+          isDarkTheme: this._isDarkTheme,
+          environmentMessage: this._environmentMessage,
+          hasTeamsContext: !!this.context.sdks.microsoftTeams,
+        }
+      );
+      ReactDom.render(element, this.domElement);
+    }).catch((err:any)=>{
+      this.logInfo(err)
+    });
 
-    ReactDom.render(element, this.domElement);
   }
 
   protected onInit(): Promise<void> {
+
     return this._getEnvironmentMessage().then(message => {
       this._environmentMessage = message;
     });
+
   }
-
-
 
   private _getEnvironmentMessage(): Promise<string> {
     if (!!this.context.sdks.microsoftTeams) { // running in Teams, office.com or Outlook
