@@ -4,10 +4,6 @@
 
 This directory will contain SharePoint Framework code samples
 
-## Used SharePoint Framework Version
-
-![1.11.0](https://img.shields.io/badge/version-1.11-green.svg)
-
 ## Applies to
 
 - [SharePoint Framework](https://aka.ms/spfx)
@@ -17,7 +13,7 @@ This directory will contain SharePoint Framework code samples
 
 Solution|Author(s)
 --------|---------
-spfx | Muhammad Babak Danyal Awan (babak.danyal@purple.telstra.com)
+spfx | Muhammad Babak Danyal Awan (babakdanyal@live.com)
 
 ## Version history
 
@@ -40,4 +36,4 @@ Version|Date|Comments
   - `gulp bundle --ship`
   - `gulp build --ship`
   - `gulp package-solution --ship`
-  - Deploy the app package (`sharepoint/solution/<package name>.spkg`) to your tenant AppCatalog.
+  - Deploy the app package (`sharepoint/solution/<package name>.spkg`) to your tenant AppCatalog
