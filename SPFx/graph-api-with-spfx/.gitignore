@@ -14,6 +14,7 @@ solution
 temp
 *.sppkg
 .heft
+package-lock.json
 
 # Coverage directory used by tools like istanbul
 coverage
@@ -32,3 +33,4 @@ obj
 
 # Styles Generated Code
 *.scss.ts
+
