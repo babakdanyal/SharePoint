@@ -19,7 +19,7 @@ Param (
 #endregion Authenticate using hard coded credentials
 
 #region Authenticate using interactive web login
-#------------ Main ------------------  
+#------------ Main ------------------ 
 cls
 try {
     $connection = Connect-PnPOnline -Url $siteUrl -UseWebLogin
