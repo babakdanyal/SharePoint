@@ -10,7 +10,7 @@ Param (
 )
  
 
-#region Authenticate using hard coded credentials 
+#region Authenticate using hard coded credentials  
 #
 #[SecureString]$SecurePass = ConvertTo-SecureString $password -AsPlainText -Force
 #[System.Management.Automation.PSCredential]$PSCredentials = New-Object System.Management.Automation.PSCredential($username, $SecurePass)
