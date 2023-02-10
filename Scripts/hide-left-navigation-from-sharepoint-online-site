@@ -16,7 +16,7 @@ Param (
 #[System.Management.Automation.PSCredential]$PSCredentials = New-Object System.Management.Automation.PSCredential($username, $SecurePass)
 #Connect-PnPOnline -Url $SiteCollection -Credentials $PSCredentials
 #
-#endregion Authenticate using hard coded credentials
+#endregion Authenticate using hard coded credentials 
 
 #region Authenticate using interactive web login    
 #------------ Main ------------------ 
