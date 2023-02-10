@@ -9,7 +9,7 @@ Param (
 #[string]$password = '*******'
 )
  
-
+ 
 #region Authenticate using hard coded credentials  
 #
 #[SecureString]$SecurePass = ConvertTo-SecureString $password -AsPlainText -Force
