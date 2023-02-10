@@ -18,7 +18,7 @@ Param (
 #
 #endregion Authenticate using hard coded credentials
 
-#region Authenticate using interactive web login 
+#region Authenticate using interactive web login
 #------------ Main ------------------ 
 cls
 try {
